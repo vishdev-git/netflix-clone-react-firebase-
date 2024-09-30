@@ -1,3 +1,4 @@
+// TitleCards.jsx
 import { useRef, useEffect, useState } from "react";
 import "./TitleCards.css";
 import { Link } from "react-router-dom";
@@ -37,7 +38,7 @@ const TitleCards = ({ title, category }) => {
     return () => {
       currentRef.removeEventListener("wheel", handleWheel);
     };
-  }, [category, handleWheel]);
+  }, [category]);
 
   return (
     <div className="title-cards">

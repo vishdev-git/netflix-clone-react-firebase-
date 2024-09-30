@@ -29,7 +29,11 @@ const Player = () => {
       options
     )
       .then((response) => response.json())
-      .then((response) => setApiData(response.results[0]))
+      .then((response) => {
+        console.log(response.results[0])
+        console.log(response.results[0].id)
+        setApiData(response.results[0])
+      })
       .catch((err) => console.error(err));
   }, []);
   return (
