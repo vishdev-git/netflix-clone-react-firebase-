@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useAuth } from "../../context/AuthContext"; 
 import netflix_spinner from '../../assets/netflix_spinner.gif';
 import { useNavigate } from "react-router-dom";
+import { logout } from "../../Firebase";
 
 
 const Login = () => {
@@ -23,12 +24,13 @@ const Login = () => {
         await login(email, password);
       } else {
         await signup(name, email, password);
+        // Logout the user after signup
+        await logout();
         // Navigate to the login page after a successful signup
         navigate('/login');
       }
     } catch (error) {
       console.error("Authentication Error:", error);
-      // Optionally, you can set a loading state or display an error message
     } finally {
       setLoading(false); // Ensure loading is reset in all cases
     }
