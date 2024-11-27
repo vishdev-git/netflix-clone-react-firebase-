@@ -26,7 +26,7 @@ A movie streaming platform using React, Firebase, TMDV API, and Context API, ena
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/vish-dev/netflix-clone-react-firebase.git
+git clone https://github.com/vishdev-git/netflix-clone-react-firebase.git
 cd netflix-clone-react-firebase
 ```
 
