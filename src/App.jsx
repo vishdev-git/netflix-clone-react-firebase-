@@ -10,20 +10,20 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useLocation } from "react-router-dom";
 
 const App = () => {
-  const { currentUser } = useAuth(); // Use useAuth to get currentUser
+  const { currentUser } = useAuth(); 
   const navigate = useNavigate();
-  const location = useLocation(); // Get the current location
+  const location = useLocation(); 
 
   useEffect(() => {
     if (currentUser) {
       console.log('Logged In');
-      // Check if the current path is the login page
+     
       if (location.pathname === '/login') {
-        navigate('/'); // Only redirect to home if coming from login
+        navigate('/'); 
       }
-      // If you're on the Player page, don't navigate
+      
     } else {
-      console.log('Logged out');
+   
       navigate('/login');
     }
   }, [currentUser, navigate, location.pathname]);

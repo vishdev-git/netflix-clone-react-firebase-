@@ -9,12 +9,12 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBDvS5ScxD2SmP0R6k-Q5wwoLtK7L9OwJ0",
-  authDomain: "netflix-clone-b654e.firebaseapp.com",
-  projectId: "netflix-clone-b654e",
-  storageBucket: "netflix-clone-b654e.appspot.com",
-  messagingSenderId: "1096337217435",
-  appId: "1:1096337217435:web:700ac472af2993bd54b33e",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -36,7 +36,7 @@ const signup = async (name, email, password) => {
     toast.error(error.code.split('/')[1].split('-').join(' '));
   }
 };
- 
+
 const login = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
